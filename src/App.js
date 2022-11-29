@@ -1,10 +1,9 @@
 import './App.css';
-import Pallets from './Pallets';
-import seedsColors from './seedsColors';
+import Main from './main';
 function App() {
   return (
     <div className="App">
-      <Pallets pallets={seedsColors[1]}/>
+      <Main/>
     </div>
   );
 }
