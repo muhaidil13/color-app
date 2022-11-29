@@ -17,10 +17,10 @@ class Pallets extends Component{
         // alert(e)
     }
     render() {
-        const {colors} = this.props.pallets
+        const {colors, palletName, emoji} = this.props.pallets
         const {level} = this.state
         const colorBox = colors[level].map(color => (
-            <ColorBox background={color.hex} name={color.name}/>
+            <ColorBox background={color.hex} name={color.name} key={color.id}/>
         ))
         return (
             
@@ -33,6 +33,12 @@ class Pallets extends Component{
                     {colorBox}
                 </div>
                 {/* Footer */}
+                <div className='Pallets-footer'>
+                    <p>{palletName}</p>
+                    <span className='emoji'>
+                        {emoji}
+                    </span>
+                </div>
             </div>
         );
     }

@@ -6,6 +6,8 @@ npm install --save react-copy-to-clipboard
 npm install @material-ui/core
 npm config set legacy-peer-deps true
 npm install --save @material-ui/icons
+npm install react-router-dom@5.2.0
+
 
 
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Slider, { Range } from 'rc-slider';
+import Slider from 'rc-slider';
+import { Link } from 'react-router-dom';
 import Snackbar from '@material-ui/core/Snackbar';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
@@ -30,12 +31,13 @@ class Navbar extends Component{
         })
     }
     render() {
-        const {level, changeLevel, handlechange} = this.props
+        const {level, changeLevel} = this.props
         const {format} = this.state
         return (
             <header className='Navbar'>
                 <div className='logo'>
-                    <a href='#' >React Color App</a>
+                    <Link to="/">React Color App</Link>
+                    
                 </div>
                 <div className='slider-container'>
                     <span>Level : {level}</span>
