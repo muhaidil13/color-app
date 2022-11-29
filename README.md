@@ -3,6 +3,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 npm install --save react-copy-to-clipboard
+npm install @material-ui/core
+npm config set legacy-peer-deps true
+npm install --save @material-ui/icons
+
+
 
 ## Available Scripts
 

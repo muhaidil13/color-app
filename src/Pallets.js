@@ -8,9 +8,13 @@ class Pallets extends Component{
         super(props);
         this.state = {level: 500}
         this.changeLevel = this.changeLevel.bind(this)
+        this.changeFormat = this.changeFormat.bind(this)
     }
     changeLevel(newlevel){
         this.setState({level:newlevel})
+    }
+    changeFormat(e){
+        // alert(e)
     }
     render() {
         const {colors} = this.props.pallets
@@ -22,7 +26,7 @@ class Pallets extends Component{
             
             <div className='Pallets'>
                 {/* Navbar */}
-                <Navbar level={level} changeLevel={this.changeLevel}/>
+                <Navbar level={level} changeLevel={this.changeLevel} handlechange={this.changeFormat}/>
 
                 <div className='Pallets-Colors'>
                     {/* color Box */}
@@ -34,3 +38,4 @@ class Pallets extends Component{
     }
 }
 export default Pallets
+
