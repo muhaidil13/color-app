@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import MiniPallete from './minipallet';
+import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 const styles = {
     root:{
         backgroundColor: "blue",
-        height:"100%",
+        height:"100vh",
+        padding:"1rem",
         display:"flex",
         alignItems:"flex-start",
         justifyContent:"center"
@@ -21,7 +23,12 @@ const styles = {
         display:"flex",
         width:"100%",
         justifyContent:"space-between",
-        color:"white"
+        color:"white",
+        "& h1":{
+            color:"black",
+            padding:".2rem 0"
+            
+        }
     },
     pallet:{
         boxSizing:"border-box",
@@ -34,6 +41,9 @@ const styles = {
 
 }
 class PalletList extends Component{
+    goToPallet(id){
+        this.props.history.push(`/pallete/${id}`)
+    }
     render() {
         const {pallet, classes} = this.props
         return (
@@ -44,7 +54,7 @@ class PalletList extends Component{
                     </nav>
                     <div className={classes.pallet}>
                             {pallet.map(pal => (
-                                <MiniPallete {...pal}/>
+                                <MiniPallete {...pal} handleClick={() => this.goToPallet(pal.id)}/>
                             ))}        
                     </div>
                 </div>
